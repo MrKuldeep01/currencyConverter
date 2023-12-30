@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="web icon" href="/myIcon.png">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mainhead">Currency Converter</h2>
+        <form>
+            <div class="userInput">
+                <h4 class="amounthead">Enter Amount </h4>
+                <input type="number" name="amount" id="amount" placeholder="|">
+            </div>
+            
+        <div class="selectFrom">
+            <div class="flagimg">
+                <span class="fromName">from</span>
+                <img class="fromImage" src="https://flagsapi.com/US/flat/64.png" >
+            </div>
+            <select name="from" class="selectTag" id="fromCurr">
+           
+            </select>
+        </div>
+
+        <div class="selectTo">
+            <div class="flagimg">
+                <span class="toName">to</span>
+                <img class="toImage" src="https://flagsapi.com/IN/flat/64.png" >
+        </div>
+            <select name="to" class="selectTag" id="toCurr">
+               
+            </select>
+        </div>
+    
+        <p class="info">Find Currency difference between two countries 😊 </p>
+        <button class="submitBtn">check</button>
+    </form>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

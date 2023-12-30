@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    /* background: linear-gradient(45deg,rgba(255, 255, 0, 0.438), rgba(0, 250, 12, 0.445)); */
+    background: linear-gradient(45deg, violet,crimson, red);
+
+}
+.container{
+    padding:20px ;
+    text-align: left;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.245);
+}
+.container h2,select,button,input{
+    width: 100%;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+    margin: 5px 0px; 
+}
+#amount{
+    padding: 15px;
+    font-size: 1.1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    background: #ffffff54;
+
+}
+.mainhead{
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family:  math;
+    text-align: center;
+    padding: 5px;
+    background: #00000018;
+
+}
+ form{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-left: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: none;
+    border: none;
+    transition: all 1s;
+
+ }
+ .selectFrom , .selectTo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.091);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;    
+    cursor: pointer;
+ }
+ .flagimg{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+ }
+ .flagimg img {
+    height: 70px;
+    border:  1px solid white;
+    border-radius: 12px;
+    object-fit: cover;
+ }
+select{
+    background: transparent;
+    width: 60%;
+    cursor: pointer;
+    font-size: .89rem;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+select :active{
+    scale: 1.04;
+}
+.info{
+ background: rgba(255, 255, 255, .134);
+ padding: 10px;
+ border-radius: 5px;
+ margin: 10px 0px;
+ width: 100%;
+ cursor: none;
+}
+.submitBtn{
+    font-size: 1.3rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    background: linear-gradient(45deg,rgba(0, 255, 255, 0.447),hotpink 70%);
+    color:black;
+    text-shadow: 0px 2px 2px white;
+}
+.submitBtn:active{
+    cursor: pointer;
+    scale: 1.04;
+
+}
+::-webkit-scrollbar{
+    display: none;
+}
