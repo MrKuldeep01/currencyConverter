@@ -298,7 +298,7 @@ const updateFlag = (elem) => {
         let exchangeRate = data[tocurr.toLowerCase()]; 
         let finalAmount = inamount.value * exchangeRate;
         let pera = document.querySelector(".info");
-        pera.innerText = `${inamount.value} ${fromcurr} is equals to ${finalAmount} ${tocurr}THANK YOU 😄`;
+        pera.innerText = `${inamount.value} ${fromcurr} is equals to ${finalAmount} ${tocurr}    THANK YOU 😄`;
       } catch (error) {
         console.error("Error fetching exchange rate:", error);
       }
