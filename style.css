@@ -5,15 +5,18 @@
 }
 body{
     display: flex;
-    align-items: center;justify-content: center;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 1rem;
     /* background: linear-gradient(45deg,rgba(255, 255, 0, 0.438), rgba(0, 250, 12, 0.445)); */
     background: linear-gradient(45deg, violet,crimson, red);
 
 }
 .container{
     padding:20px ;
+    width: 80%;
     text-align: left;
     border: none;
     border-radius: 8px;

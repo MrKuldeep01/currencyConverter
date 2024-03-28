@@ -270,44 +270,53 @@ for (select of dropdowns) {
   });
 }
 const updateFlag = (elem) => {
-    let currCode = elem.value;
-    let flagUrl = `https://flagsapi.com/${currCode}/flat/64.png`;
-    let flagimg = elem.parentElement.querySelector("img");
-    flagimg.src = flagUrl;
-  };
+  let currCode = elem.value;
+  let flagUrl = `https://flagsapi.com/${currCode}/flat/64.png`;
+  let flagimg = elem.parentElement.querySelector("img");
+  flagimg.src = flagUrl;
+};
+
+let submit = document.querySelector(".submitBtn");
+submit.addEventListener("click", async (evnt) => {
+  evnt.preventDefault();
+
+  let fromcurr = countryData[fromSelect.value];
+  let tocurr = countryData[toSelect.value];
+
+  // const base_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/`;
+  // const base_url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2024.3.28/v1/currencies/usd.json`;//<----new one
+  const base_url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies`;
+
+  // json = fetchJSON(`/currencies/{fromCurrency}`);
+  // rate = json[fromCurrency][toCurrency];
   
-  let submit = document.querySelector(".submitBtn");
-  submit.addEventListener("click", async (evnt) => {
-    evnt.preventDefault();
-  
-    let fromcurr = countryData[fromSelect.value];
-    let tocurr = countryData[toSelect.value];
-  
-    const base_url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/`;
-    let url = `${base_url}/${fromcurr.toLowerCase()}/${tocurr.toLowerCase()}.json`;
-  
-    let inamount = document.querySelector("#amount");
-    if (inamount.value === "" || inamount.value < 1 ) {
-      inamount.value = 1;
+  // let url = `${base_url}/${fromcurr.toLowerCase()}/${tocurr.toLowerCase()}.json`;
+  let url = `${base_url}/${fromcurr.toLowerCase()}.json`;
+
+  let inamount = document.querySelector("#amount");
+  if (inamount.value === "" || inamount.value < 1) {
+    inamount.value = 1;
+  }
+
+  let fetchRate = async () => {
+    try {
+      let res = await fetch(url);
+      let data = await res.json();
+      let exchangeRate = data[fromcurr.toLowerCase()][tocurr.toLowerCase()];
+      let finalAmount = inamount.value * exchangeRate;
+      let pera = document.querySelector(".info");
+      pera.innerText = `${finalAmount} ${tocurr}`;
     }
-  
-    let fetchRate = async () => {
-      try {
-        let res = await fetch(url);
-        let data = await res.json();
-        let exchangeRate = data[tocurr.toLowerCase()]; 
-        let finalAmount = inamount.value * exchangeRate;
-        let pera = document.querySelector(".info");
-        pera.innerText = `${inamount.value} ${fromcurr} is equals to ${finalAmount} ${tocurr}    THANK YOU 😄`;
-      } catch (error) {
-        console.error("Error fetching exchange rate:", error);
-        alert("Sorry for the this ! API is not working well. Please try after some time ")
-      }
-    };
-  
-    fetchRate();
-  });
-  
+     catch (error) {
+      console.error("Error fetching exchange rate:", error);
+      alert(
+        "sorry for the this ! API is not working well."
+      );
+    }
+  };
+
+  fetchRate();
+});
 
 // const updateFlag = (elem) => {
 //   let currCode = elem.value;
