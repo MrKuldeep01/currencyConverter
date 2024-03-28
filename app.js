@@ -301,6 +301,7 @@ const updateFlag = (elem) => {
         pera.innerText = `${inamount.value} ${fromcurr} is equals to ${finalAmount} ${tocurr}    THANK YOU 😄`;
       } catch (error) {
         console.error("Error fetching exchange rate:", error);
+        alert("Sorry for the this ! API is not working well. Please try after some time ")
       }
     };
   
